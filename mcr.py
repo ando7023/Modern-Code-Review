@@ -1,25 +1,36 @@
 def is_win(game):
-    win = False
-    # Check rows
-    if game[0][0] == game[0][1] == game[0][2] and (game[0][0] == 'X' or game[0][0] == 'O'):
-        win = True
-    if game[1][0] == game[1][1] == game[1][2] and (game[1][0] == 'X' or game[1][0] == 'O'):
-        win = True
-    if game[2][0] == game[2][1] == game[2][2] and (game[2][0] == 'X' or game[2][0] == 'O'):
-        win = True
-    # Check columns
-    if game[0][0] == game[1][0] == game[2][0] and (game[0][0] == 'X' or game[0][0] == 'O'):
-        win = True
-    if game[0][1] == game[1][1] == game[2][1] and (game[0][1] == 'X' or game[0][1] == 'O'):
-        win = True
-    if game[0][2] == game[1][2] == game[2][2] and (game[0][2] == 'X' or game[0][2] == 'O'):
-        win = True
+    #win = False
+    # # Check rows
+    # if game[0][0] == game[0][1] == game[0][2] and (game[0][0] == 'X' or game[0][0] == 'O'):
+    #     win = True
+    # if game[1][0] == game[1][1] == game[1][2] and (game[1][0] == 'X' or game[1][0] == 'O'):
+    #     win = True
+    # if game[2][0] == game[2][1] == game[2][2] and (game[2][0] == 'X' or game[2][0] == 'O'):
+    #     win = True
+    # # Check columns
+    # if game[0][0] == game[1][0] == game[2][0] and (game[0][0] == 'X' or game[0][0] == 'O'):
+    #     win = True
+    # if game[0][1] == game[1][1] == game[2][1] and (game[0][1] == 'X' or game[0][1] == 'O'):
+    #     win = True
+    # if game[0][2] == game[1][2] == game[2][2] and (game[0][2] == 'X' or game[0][2] == 'O'):
+    #     win = True
+    # # Check diagonals
+    # if game[0][0] == game[1][1] == game[2][2] and (game[0][0] == 'X' or game[0][0] == 'O'):
+    #     win = True
+    # if game[0][2] == game[1][1] == game[2][0] and (game[0][2] == 'X' or game[0][2] == 'O'):
+    #     win = True
+    # return win
+    for i in range(3):
+        if game[i][0] == game[i][1] == game[i][2] != ' ':
+            return True
+        if game[0][i] == game[1][i] == game[2][i] != ' ':
+            return True
     # Check diagonals
-    if game[0][0] == game[1][1] == game[2][2] and (game[0][0] == 'X' or game[0][0] == 'O'):
-        win = True
-    if game[0][2] == game[1][1] == game[2][0] and (game[0][2] == 'X' or game[0][2] == 'O'):
-        win = True
-    return win
+    if game[0][0] == game[1][1] == game[2][2] != ' ':
+        return True
+    if game[0][2] == game[1][1] == game[2][0] != ' ':
+        return True
+    return False
 
 def main():
     game = [[' ' for _ in range(3)] for _ in range(3)]  # Tic-tac-toe board
