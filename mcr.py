@@ -1,6 +1,4 @@
-def is_win(game):
-    #win = False
-    # # Check rows
+def is_win(game):    # # Check rows
     # if game[0][0] == game[0][1] == game[0][2] and (game[0][0] == 'X' or game[0][0] == 'O'):
     #     win = True
     # if game[1][0] == game[1][1] == game[1][2] and (game[1][0] == 'X' or game[1][0] == 'O'):
